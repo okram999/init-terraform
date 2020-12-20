@@ -1,0 +1,18 @@
+version: 0.2
+
+env:
+  secrets-manager:
+    MY_KEY: "arn:aws:secretsmanager:us-east-1:896638299127:secret:cb-iam-key-ORslkq:my_access_key"
+    MY_SECRET: "arn:aws:secretsmanager:us-east-1:896638299127:secret:cb-iam-secret-erO9jf:my_secret_key"
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+    - pwd
+    - ls -l
+    - chmod +x script.sh
+  build:
+    commands:
+    - ls
+    - ./script.sh $MY_KEY $MY_SECRET
