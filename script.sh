@@ -63,4 +63,5 @@ for account in $accounts; do
 
   # Sample command 2: List the S3 buckets in the account
   aws_session_run terraform init
+  aws_session_run terraform apply -auto-approve
 done
