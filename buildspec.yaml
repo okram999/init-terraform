@@ -12,6 +12,10 @@ phases:
     - pwd
     - ls -l
     - chmod +x script.sh
+    - wget https://releases.hashicorp.com/terraform/0.14.3/terraform_0.14.3_linux_amd64.zip
+    - unzip terraform_0.14.3_linux_amd64.zip
+    - mv terraform /usr/bin
+    - terraform -v
   build:
     commands:
     - ls

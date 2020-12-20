@@ -62,5 +62,5 @@ for account in $accounts; do
   echo "Account: $account ($this_account)"
 
   # Sample command 2: List the S3 buckets in the account
-  aws_session_run aws s3 ls
+  aws_session_run terraform init
 done
