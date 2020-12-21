@@ -1,3 +1,5 @@
+https://codebuild.us-east-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiK1BtWExYOWQrR2JaSFBYamo1anhiYWRqVms4T1pzcFpiZ0FlRGZXd3ljSnpCSGh4UDl3T25CM09CSmd0UDZXNEdLcWllbXN1RTdFRWhadWxETnMrTlVBPSIsIml2UGFyYW1ldGVyU3BlYyI6ImNlTkk2RHB6N3ZSakNxWjkiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=master
+
 # init-terraform
 
 A sample repository that have the bare minimum TF code to demonstrate looping through all the AWS accounts in an Organization and execute terraform templates using AWS Codebuild.
