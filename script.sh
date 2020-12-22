@@ -68,7 +68,8 @@ for account in $accounts; do
   echo "Using state bucket: nokram-tf-state-$account-$region in region: $region"
   aws_session_run terraform init -backend-config="bucket=nokram-tf-state-$account-$region" -backend-config="key=terraform-$account-$region.tfstate" -backend-config="region=$region" -backend=true -force-copy -get=true -input=false
   aws_session_run terraform apply -auto-approve
-  rm -f terraform.tfstate
+  echo Deleting the hidden terraform directory that contains the state bucket data
+  rm -rf .terraform
   echo Listing the curent working directory
   ls -al
 done
