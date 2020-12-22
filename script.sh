@@ -35,7 +35,9 @@ aws_session_cleanup() {
 }
 
 # get the account ids from organization
-export AWS_DEFAULT_REGION='us-east-1'
+region=$3
+echo "excuting in region: $region"
+export AWS_DEFAULT_REGION=$region
 role='AWSControlTowerExecution'
 accesskey=$1
 echo $accesskey
@@ -62,6 +64,6 @@ for account in $accounts; do
   echo "Account: $account ($this_account)"
 
   # Sample command 2: List the S3 buckets in the account
-  aws_session_run terraform init
+  aws_session_run terraform init -backend-config="bucket=nokram-tf-state-$account-$region" -backend-config="key=terraform.tfstate" -backend-config="region=$region" -backend=true -force-copy -get=true -input=false
   aws_session_run terraform apply -auto-approve
 done
