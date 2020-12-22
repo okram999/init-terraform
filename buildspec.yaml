@@ -1,6 +1,8 @@
 version: 0.2
 
 env:
+  variables:
+    REGION: "us-east-1"
   secrets-manager:
     MY_KEY: "arn:aws:secretsmanager:us-east-1:896638299127:secret:cb-iam-key-ORslkq:my_access_key"
     MY_SECRET: "arn:aws:secretsmanager:us-east-1:896638299127:secret:cb-iam-secret-erO9jf:my_secret_key"
@@ -19,4 +21,4 @@ phases:
   build:
     commands:
     - ls
-    - ./script.sh $MY_KEY $MY_SECRET
+    - ./script.sh $MY_KEY $MY_SECRET $REGION
